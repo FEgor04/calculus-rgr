@@ -7,8 +7,11 @@
 \usepackage[english,russian]{babel}
 \usepackage{textcomp}
 \usepackage{tabularray}
+\usepackage{fixmath}
 \everymath{\displaystyle}
 
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\rot}{rot}
 \DeclareMathOperator{\Div}{div}
+
+\renewcommand{\vec}[1]{\mathbold{#1}}

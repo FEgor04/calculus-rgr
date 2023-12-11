@@ -1,19 +1,15 @@
 \begin{frame}\frametitle{Задача 1. Потенциал векторного поля}
 Убедимся, что поле потенциально.
-Для этого найдем $\rot \vec H = \grad \vec H \times \vec H$.
+Воспользуемся критерием потенциальности векторного поля.
 
-\[
-  \grad \vec H = 
-  \left( \frac{\partial \vec H}{\partial x};  \frac{\partial \vec H}{\partial y}\right) =
-  \left( e^x; -e^{y} \right)
-\]
-\[
-  \rot \vec H = 
-  \grad \vec H \times \vec H = 
-  (e^x; -e^y; 0) \times (e^x; -e^y; 0) =
-  (0, 0, e^x \cdot (-e^y) - (-e^y) \cdot e^x) =
-  \vec 0
-\]
-Таким образом, так как $\rot \vec H = \vec 0$,
-  то поле $\vec H$ -- потенциально.
+\begin{block}{Критерий потенциальности векторного поля}
+Непрерывное в области $D \subset \mathbb{R}^n$ векторное поле $\vec A$
+потенциально в $D$ тогда и только тогда, когда его работа на любом лежащем в $D$
+замкнутом пути равна нулю:
+\[ \oint \vec H \cdot d \vec s = 0  \]
+\end{block}
+
+Проверим этот критерий для $\vec H = (e^x, - e^y)$.
+Очевидно, что векторное поле $H$ непрерывно на $\mathbb{R}^2$.
+
 \end{frame}   
