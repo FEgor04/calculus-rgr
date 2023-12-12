@@ -11,8 +11,8 @@ def main(args):
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    for C in [i / 10 for i in range(1, 100)]:
-        x = np.linspace(np.log(C), 10, 10000)
+    for C in [0.1, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0]:
+        x = np.linspace(- np.log(C), 10, 100000)
         y = np.log(C - np.exp(- x))
         ax.plot(x, y, c='b', lw=pu.plot_lw())
 
