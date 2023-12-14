@@ -302,5 +302,6 @@ TSWLatexianTemp*
 
 # Python venv
 venv
-
 __pycache__
+
+figures

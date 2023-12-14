@@ -37,6 +37,7 @@ def main(args):
     U = np.exp(total_x)
     V = - np.exp(total_y)
     # N = np.sqrt(np.square(U) + np.square(V))
+    N = 1
 
     q = ax.quiver(total_x, total_y, U/N, V/N, angles='xy', scale_units='xy')
     # ax.quiverkey(q, X=0.3, Y=1.1, U=10, label=r"$\vec H$", labelpos='E')
