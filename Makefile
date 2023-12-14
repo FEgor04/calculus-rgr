@@ -3,7 +3,9 @@ FIGURES_SRC_DIR := src/python
 
 AUX_DIR := aux
 
-LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -auxdir=$(AUX_DIR)
+DEP_FILE := .deps.d
+
+LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -auxdir=$(AUX_DIR) -deps -deps-out=$(DEP_FILE)
 
 .PHONY: clean
 
@@ -22,3 +24,7 @@ clean:
 $(FIGURES_DIR) $(AUX_DIR):
 	mkdir $@
 
+$(DEP_FILE):
+	touch $@
+
+-include $(DEP_FILE)
