@@ -308,3 +308,6 @@ figures
 
 # latexmk-generated dependents 
 .deps.d
+
+# latexindent backups
+*.bak*
