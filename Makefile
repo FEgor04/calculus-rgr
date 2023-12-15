@@ -5,7 +5,9 @@ AUX_DIR := aux
 
 DEP_FILE := .deps.d
 
-LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -auxdir=$(AUX_DIR) -deps -deps-out=$(DEP_FILE)
+LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
+								 -use-make -auxdir=$(AUX_DIR) 											\
+								 -M -MF $(DEP_FILE)
 
 .PHONY: clean format
 
