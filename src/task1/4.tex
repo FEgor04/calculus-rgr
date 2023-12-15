@@ -1,14 +1,25 @@
 \begin{frame}\frametitle{Потенциал векторного поля}
-	Пусть \(\Phi(\vec r)\) -- потенциал поля \(\vec H\).
-	Тогда \(\grad \Phi(\vec r) = \vec H(\vec r)\).
+  Пусть \(U(R)\) -- потенциал поля \(\vec H\).
+  
+  \begin{equation}
+      U(R) =
+      \int\limits_{\widehat{AR}} \vec H \, d \vec r
+    \label{eq:u_integral}
+  \end{equation}
+  Где $A$ -- точка поля, координаты которой удовлетворяют условиям
+  существования полей $\vec H$ и $\rot \vec H$.
 
-	В \cite{korn} приведена формула
-	\begin{equation}
-		\int\limits_{\vec a}^{\vec r} \vec H (\vec p) \, d \vec p = - (\Phi(\vec r) - \Phi(\vec a))
-		\label{eq:pontential_equation}
-	\end{equation}
-	Подставляя в качестве точки \(\vec a = 0\) и интегрируя по
-	линиям \((0;0) - (r_x, 0)\) и \((r_x, 0) - (r_x, r_y)\)
-	получаем равенство:
+  Возьмем в качестве $A$ точку $(0; 0)$.
+  Так как интеграл в уравнении (\ref{eq:u_integral}) не зависит от пути,
+  то разобьем его на две линии $(0; 0) - (R_x: 0) - (R_x; R_y)$
 
+  \begin{align}
+    U(R) &= \int\limits_{(0; 0)}^{(R_x; 0)} \left(e^x dx + (-e^y dy) \right) +
+    \int\limits_{(R_x; 0)}^{(R_x; R_y)} \left(e^x dx + (-e^y dy) \right) = \\
+         &=
+    \int\limits_{0}^{R_x} e^x \, dx - \int\limits_{0}^{R_y} e^y \, dy =
+    e^{R_x} - e^{R_y}
+    \label{eq:}
+  \end{align}
+	
 \end{frame}
