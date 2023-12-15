@@ -1,33 +1,33 @@
 \begin{frame}\frametitle{Уравнения векторных линий}
-% \begin{block}{Определение}
-%   Векторной линией поля \(\vec A\) называется такая линия \(L\),
-%   в каждой точке которой касательная к этой линии 
-%   совпадает с направлением \(\vec A\).
-% \end{block}
+	% \begin{block}{Определение}
+	%   Векторной линией поля \(\vec A\) называется такая линия \(L\),
+	%   в каждой точке которой касательная к этой линии 
+	%   совпадает с направлением \(\vec A\).
+	% \end{block}
 
-Для нахождения уравнений векторных линий решим дифференциальное уравнение:
-  \begin{equation}
-    \frac{dx}{e^x} = \frac{dy}{-e^y}
-    \label{eq:vec_lines}
-  \end{equation}
-Проинтегрируем полученное уравнение:
-  \begin{equation}
-    \int e^{-x} \, dx = \int -e^{-y} \, dy
-    \label{eq:vec_lines_int}
-  \end{equation}
-Интегрируя в уме, получаем:
-  \begin{align*}
-    -e^{-x} + C_1       &= e^{-y} + C_2 \\
-    e^{-y}  + e^{-x}   &= C
-    \label{eq:vec_lines_integrated}
-  \end{align*}
+	Для нахождения уравнений векторных линий решим дифференциальное уравнение:
+	\begin{equation}
+		\frac{dx}{e^x} = \frac{dy}{-e^y}
+		\label{eq:vec_lines}
+	\end{equation}
+	Проинтегрируем полученное уравнение:
+	\begin{equation}
+		\int e^{-x} \, dx = \int -e^{-y} \, dy
+		\label{eq:vec_lines_int}
+	\end{equation}
+	Интегрируя в уме, получаем:
+	\begin{align*}
+		-e^{-x} + C_1    & = e^{-y} + C_2 \\
+		e^{-y}  + e^{-x} & = C
+		\label{eq:vec_lines_integrated}
+	\end{align*}
 
-  Перенесем \(e^{-x}\) в правую часть и прологарифмируем:
+	Перенесем \(e^{-x}\) в правую часть и прологарифмируем:
 
-  \begin{equation}
-    y = - \ln(C - e^{-x}), \qquad
-    C - e^{-x} > 0 \Longleftrightarrow x > - \ln(C), C > 0
-    \label{eq:vec_lines_final}
-  \end{equation}
+	\begin{equation}
+		y = - \ln(C - e^{-x}), \qquad
+		C - e^{-x} > 0 \Longleftrightarrow x > - \ln(C), C > 0
+		\label{eq:vec_lines_final}
+	\end{equation}
 
 \end{frame}
