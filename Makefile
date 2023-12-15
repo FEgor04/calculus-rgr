@@ -18,7 +18,7 @@ figures/%.pdf: src/python/%.py | $(FIGURES_DIR)
 	source venv/bin/activate; python3 $< --save $@
 
 clean:
-	rm -rf $(FIGURES_DIR) $(AUX_DIR) main.pdf
+	rm -rf $(FIGURES_DIR) $(AUX_DIR) $(DEP_FILE) main.pdf
 	latexmk -C main.tex
 
 $(FIGURES_DIR) $(AUX_DIR):
