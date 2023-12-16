@@ -20,11 +20,11 @@ def main(args):
         return - np.log(C - np.exp(-x))
 
 
-    c_range = [np.exp(i) for i in range(1, 20)]
+    c_range = [np.exp(i) for i in range(1, 10)]
     for C in c_range:
         x = np.linspace(- np.log(C) + eps, max_x, 1000)
         y = compute_y(x, C)
-        ax.plot(x, y, c='b', lw=pu.plot_lw())
+        ax.plot(x, y, c='black', lw=pu.plot_lw())
 
         X = np.linspace(- np.log(C) + eps, max_x, 20)
         total_x += list(X)
@@ -39,7 +39,7 @@ def main(args):
     # N = np.sqrt(np.square(U) + np.square(V))
     N = 1
 
-    q = ax.quiver(total_x, total_y, U/N, V/N, angles='xy', scale_units='xy')
+    q = ax.quiver(total_x, total_y, U/N, V/N, angles='xy', scale_units='xy', color='blue')
     # ax.quiverkey(q, X=0.3, Y=1.1, U=10, label=r"$\vec H$", labelpos='E')
 
     ax.set_xlabel('$x$')

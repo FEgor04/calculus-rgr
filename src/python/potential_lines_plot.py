@@ -24,13 +24,15 @@ def main(args):
     for C in c_range:
         x = np.linspace(- np.log(C) + eps, max_x, 10000)
         y_vector = compute_vector_line_y(x, C)
-        ax.plot(x, y_vector, c='b', lw=pu.plot_lw())
+        ax.plot(x, y_vector, c='black', lw=pu.plot_lw())
         x_potential = np.linspace(np.log(C), max_x, 10000)
         y_potential = compute_potential_line_y(x_potential, C)
-        ax.plot(x_potential, y_potential, c='r', lw=pu.plot_lw())
+        ax.plot(x_potential, y_potential, lw=pu.plot_lw())
 
     ax.set_xlabel('$x$')
     ax.set_ylabel('$y$')
+
+    plt.scatter([-5, 5], [10, -5])
 
     # plt.ylim([-15, 15])
     # plt.xlim([-6, 6])
