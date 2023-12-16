@@ -20,7 +20,7 @@ def main(args):
         return - np.log(C - np.exp(-x))
 
 
-    c_range = [np.exp(i) for i in range(1, 10)]
+    c_range = [np.exp(i) for i in range(1, 20)]
     for C in c_range:
         x = np.linspace(- np.log(C) + eps, max_x, 1000)
         y = compute_y(x, C)
