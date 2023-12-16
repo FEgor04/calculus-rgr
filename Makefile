@@ -20,8 +20,8 @@ figures/%.pdf: src/python/%.py | $(FIGURES_DIR)
 	source venv/bin/activate; python3 $< --save $@
 
 clean:
-	rm -rf $(FIGURES_DIR) $(AUX_DIR) $(DEP_FILE) main.pdf **/*.bak*
-	latexmk -C main.tex
+	rm -rf $(FIGURES_DIR) $(AUX_DIR) $(DEP_FILE) main.pdf **/*.bak* src/**/*.bak* *.bbl *.nav *.run.xml *.snm **/*.log src/*/*.log
+	latexmk -C main.tex 
 
 format:
 	latexindent src/**/*.tex -w
