@@ -24,7 +24,7 @@ clean:
 	latexmk -C main.tex
 
 format:
-	latexindent **/*.tex -w
+	latexindent src/**/*.tex -w
 
 $(FIGURES_DIR) $(AUX_DIR):
 	mkdir $@
