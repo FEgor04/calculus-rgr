@@ -9,12 +9,15 @@ LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
 								 -use-make -auxdir=$(AUX_DIR) 											\
 								 -M -MF $(DEP_FILE)
 
-.PHONY: clean format
+.PHONY: clean format pvc
 
 all: main.pdf
 
 main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
 	latexmk $(LATEXMK_FLAGS) $<
+
+pvc: main.tex
+	latexmk $(LATEXMK_FLAGS) -pvc $<
 
 figures/%.pdf: src/python/%.py | $(FIGURES_DIR)
 	source venv/bin/activate; python3 $< --save $@
