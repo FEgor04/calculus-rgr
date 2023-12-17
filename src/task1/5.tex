@@ -7,18 +7,21 @@
 	Для нахождения уравнения линий уровня потенциала зафиксируем
 	уровень потенциала \(C\) и выразим \(y\) через \(x\)
 
-	\begin{equation}
+	\begin{equation*}
 		U(x, y) = e^x - e^y = C \Longleftrightarrow e^y = e^x - C
-		\label{eq:potential_level_line}
-	\end{equation}
+	\end{equation*}
 	Прологарифмируем уравнение с обеих сторон и получим
 	\begin{equation}
 		y = \ln(e^x - C) \qquad e^x > C \Rightarrow x > \ln(C)
+		\label{eq:potential_lines}
 	\end{equation}
 
 \end{frame}
 
 \begin{frame}\frametitle{Линии уровня потенциала}
+  На рис.~\ref{fig:potential_lines} представлены графики функций
+  (\ref{eq:vec_lines}) черным цветом и (\ref{eq:potential_lines})
+  разными цветами для $C = e^1, e^2\, \ldots, e^9$
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.5\textwidth]{figures/potential_lines_plot.pdf}

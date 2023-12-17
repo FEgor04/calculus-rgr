@@ -1,12 +1,12 @@
 \begin{frame}\frametitle{Потенциал векторного поля}
 	Пусть \(U(R)\) -- потенциал поля \(\vec H\).
 
-	\begin{equation}
+	\begin{equation*}
 		U(R) =
 		\int\limits_{\widehat{AR}} \vec H \, d \vec r
 		\label{eq:u_integral}
 		% TODO: добавить источник формулы
-	\end{equation}
+	\end{equation*}
 	Где $A$ -- точка поля, координаты которой удовлетворяют условиям
 	существования полей $\vec H$ и $\rot \vec H$.
 
@@ -14,26 +14,25 @@
 	Так как интеграл в уравнении (\ref{eq:u_integral}) не зависит от пути,
 	то разобьем его на две линии $(0; 0) - (R_x: 0) - (R_x; R_y)$
 
-	\begin{align}
+	\begin{align*}
 		U(R) & = \int\limits_{(0; 0)}^{(R_x; 0)} \left(e^x dx + (-e^y dy) \right) +
 		\int\limits_{(R_x; 0)}^{(R_x; R_y)} \left(e^x dx + (-e^y dy) \right) =      \\
 		     & =
 		\int\limits_{0}^{R_x} e^x \, dx - \int\limits_{0}^{R_y} e^y \, dy =
 		e^{R_x} - e^{R_y}
-		\label{eq:}
-	\end{align}
+	\end{align*}
 
 \end{frame}
 
 \begin{frame}\frametitle{Потенциал векторного поля: проверка}
 	По определению потенциала векторного поля~\cite[ст.~269]{zorich}, $\grad U = \vec H$. Проверим это.
 
-	\begin{equation}
+	\begin{equation*}
 		\grad U =
 		\left( \frac{\partial U}{\partial x}; \frac{\partial U}{\partial y} \right) =
 		\left( e^x; -e^y \right)
 		= \vec H
-	\end{equation}
+	\end{equation*}
 
 	Таким образом, \(U(R) = e^{R_x} - e^{R_y}\) -- потенциал векторного поля \(\vec H\).
 \end{frame}
