@@ -311,3 +311,4 @@ figures
 
 # latexindent backups
 *.bak*
+aux
