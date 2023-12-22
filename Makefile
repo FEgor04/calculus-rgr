@@ -9,7 +9,7 @@ LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
 								 -use-make -auxdir=$(AUX_DIR) 											\
 								 -M -MF $(DEP_FILE)
 
-.PHONY: clean format pvc
+.PHONY: clean format pvc spell
 
 all: main.pdf
 
@@ -28,6 +28,9 @@ clean:
 
 format:
 	latexindent src/**/*.tex -w
+
+spell:
+	hunspell -d ru_RU,en_US -l -t src/**/*.tex src/*.tex main.tex
 
 $(FIGURES_DIR) $(AUX_DIR):
 	mkdir $@
