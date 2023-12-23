@@ -5,7 +5,7 @@ import numpy as np
 import plot_utils as pu
 import matplotlib
 import conformal_utils as cu
-
+from conformal_utils import w
 
 def main(args):
     fig, (ax_virtual, ax_physical) = cu.setup()
@@ -23,9 +23,6 @@ def main(args):
     y_virtual = [1/x for x in x_virtual]
 
     ax_virtual.plot(x_virtual, y_virtual)
-
-    def w(z: complex):
-        return (z-1)/(z+1)
 
     virtual_numbers = [complex(x_virtual[i], y_virtual[i]) for i in range(len(x_virtual))]
     physical_numbers = [w(z) for z in virtual_numbers]

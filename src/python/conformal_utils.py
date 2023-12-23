@@ -1,5 +1,6 @@
 import plot_utils as pu
 import matplotlib.pyplot as plt
+import numpy as np
 
 def setup():
     fig = plt.figure()
@@ -20,3 +21,6 @@ def setup():
 
     return fig, (ax_virtual, ax_physical)
 
+
+def w(z: complex):
+    return (z+1)/(z-1)
