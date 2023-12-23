@@ -6,7 +6,7 @@ def setup():
     fig, (ax_virtual, ax_physical) = plt.subplots(
             nrows = 1,
             ncols = 2,
-            figsize=(12,6)
+            figsize=(12,6),
             )
 
 
