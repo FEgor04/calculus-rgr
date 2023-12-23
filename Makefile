@@ -19,8 +19,9 @@ main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
 pvc: main.tex
 	latexmk $(LATEXMK_FLAGS) -pvc $<
 
-figures/%.pdf: src/python/%.py | $(FIGURES_DIR)
+figures/%.pdf: src/python/%.py src/python/conformal_utils.py | $(FIGURES_DIR)
 	source venv/bin/activate; python3 $< --save $@
+
 
 clean:
 	rm -rf $(FIGURES_DIR) $(AUX_DIR) $(DEP_FILE) main.pdf **/*.bak* src/**/*.bak* *.bbl *.nav *.run.xml *.snm **/*.log src/*/*.log

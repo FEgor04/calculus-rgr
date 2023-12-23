@@ -4,14 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plot_utils as pu
 import matplotlib
+import conformal_utils as cu
 
 
 def main(args):
-    pu.figure_setup()
-
-    fig_size = pu.get_fig_size(10, 5)
-    fig = plt.figure()
-    fig, (ax_virtual, ax_physical) = plt.subplots(2)
+    fig, (ax_virtual, ax_physical) = cu.setup()
 
     # ax_virtual.set_title(r"\text{Виртуальное пространство}")
     # ax_physical.set_title(r"\text{Физическое пространство}")
