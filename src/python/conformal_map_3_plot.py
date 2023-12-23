@@ -22,8 +22,8 @@ def main(args):
     ax_physical.set_xlabel(r"$X$")
     ax_physical.set_ylabel(r"$Y$")
 
-    x_virtual = np.linspace(-100, 100, 100_000)
-    y_virtual = [1/x for x in x_virtual]
+    y_virtual = np.linspace(-100, 100, 100_000)
+    x_virtual = [5 for y in y_virtual]
 
     ax_virtual.plot(x_virtual, y_virtual)
 
