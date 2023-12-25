@@ -16,37 +16,51 @@ def main(args):
     horizontal_color = 'blue'
     vertical_color = 'red'
 
-    c_array = np.array([10] + list(range(50, 200, 50)))
-    c_array = np.concatenate([-c_array, c_array])
+    c_array = [0, 0.5, 1, 2, 10]
+    horizontal_colors = ["#ea580c", "#f97316", "#fdba74", "#fed7aa", "#ffedd5"]
+    vertical_colors =   ["#65a30d", "#84cc16", "#a3e635", "#bef264", "#ecfccb"]
 
-    for c in c_array:
-        u_virtual = np.linspace(-10000, 10000, 100_000)
+    sampling_rate = 1_000_000
+
+    def plot_complex(ax, numbers, color):
+        x = [z.real for z in numbers]
+        y = [z.imag for z in numbers]
+
+        ax.plot(x, y, color=color)
+
+    def draw_horizontal_line(c, color):
+        u_virtual = np.linspace(-10000, 10000, sampling_rate)
         v_virtual = np.array([c] * len(u_virtual))
-
-        ax_virtual.plot(u_virtual, v_virtual, color=horizontal_color)
         virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
-        physical = w(virtual)
 
-        x_physical = [z.real for z in physical]
-        y_physical = [z.imag for z in physical]
+        plot_complex(ax_virtual, virtual, color)
+        plot_complex(ax_physical, w(virtual), color)
 
-        ax_physical.plot(x_physical, y_physical, color=horizontal_color)
-
-    for c in c_array:
-        v_virtual = np.linspace(-10000, 10000, 100_000)
-        u_virtual = np.array([c] * len(u_virtual))
-
-        ax_virtual.plot(u_virtual, v_virtual, color=vertical_color)
+    def draw_vertical_line(c, color):
+        v_virtual = np.linspace(-10000, 10000, sampling_rate)
+        u_virtual = np.array([c] * len(v_virtual))
         virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
-        physical = w(virtual)
 
-        x_physical = [z.real for z in physical]
-        y_physical = [z.imag for z in physical]
+        plot_complex(ax_virtual, virtual, color)
+        plot_complex(ax_physical, w(virtual), color)
 
-        ax_physical.plot(x_physical, y_physical, color=vertical_color)
 
-    ax_virtual.set_xlim([-200, 200])
-    ax_virtual.set_ylim([-200, 200])
+
+    for i in range(len(c_array)):
+        c = c_array[i]
+        c_vertical = vertical_colors[i]
+        c_horizontal = horizontal_colors[i]
+        draw_horizontal_line(c, color=c_horizontal)
+        draw_vertical_line(c, color=c_vertical)
+        if c > 0:
+            draw_horizontal_line(-c, color=c_horizontal)
+            draw_vertical_line(-c, color=c_vertical)
+        
+    ax_virtual.set_xlim([-15, 15])
+    ax_virtual.set_ylim([-15, 15])
+
+    ax_physical.set_xlim([-5, 5])
+    ax_physical.set_ylim([-5, 5])
     
     if args.save:
         pu.save_fig(fig, args.save)
