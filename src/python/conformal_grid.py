@@ -14,8 +14,12 @@ def main(args):
     ax_physical.set_aspect('auto')
 
     horizontal_color = 'blue'
+    vertical_color = 'red'
 
-    for c in [-150, -100, -50, -25, -10, 10, 25, 50, 100, 150]:
+    c_array = np.array([10] + list(range(50, 200, 50)))
+    c_array = np.concatenate([-c_array, c_array])
+
+    for c in c_array:
         u_virtual = np.linspace(-10000, 10000, 100_000)
         v_virtual = np.array([c] * len(u_virtual))
 
@@ -27,6 +31,22 @@ def main(args):
         y_physical = [z.imag for z in physical]
 
         ax_physical.plot(x_physical, y_physical, color=horizontal_color)
+
+    for c in c_array:
+        v_virtual = np.linspace(-10000, 10000, 100_000)
+        u_virtual = np.array([c] * len(u_virtual))
+
+        ax_virtual.plot(u_virtual, v_virtual, color=vertical_color)
+        virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
+        physical = w(virtual)
+
+        x_physical = [z.real for z in physical]
+        y_physical = [z.imag for z in physical]
+
+        ax_physical.plot(x_physical, y_physical, color=vertical_color)
+
+    ax_virtual.set_xlim([-200, 200])
+    ax_virtual.set_ylim([-200, 200])
     
     if args.save:
         pu.save_fig(fig, args.save)
