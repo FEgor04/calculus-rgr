@@ -11,15 +11,6 @@ from conformal_utils import w
 def main(args):
     fig, (ax_virtual, ax_physical) = cu.setup()
 
-    # ax_virtual.set_title(r"\text{Виртуальное пространство}")
-    # ax_physical.set_title(r"\text{Физическое пространство}")
-
-    ax_virtual.set_xlabel(r"$u$")
-    ax_virtual.set_ylabel(r"$v$")
-
-    ax_physical.set_xlabel(r"$x$")
-    ax_physical.set_ylabel(r"$y$")
-
     x_virtual = np.linspace(-100, 100, 100_000)
     y_virtual = [x for x in x_virtual]
 

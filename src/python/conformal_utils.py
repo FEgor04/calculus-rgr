@@ -12,12 +12,16 @@ def setup():
 
 
     ax_virtual.set_title("Виртуальное пространство")
-    ax_virtual.set_xlabel(r"$U$")
-    ax_virtual.set_ylabel(r"$V$")
+    ax_virtual.set_xlabel(r"$u$")
+    ax_virtual.set_ylabel(r"$v$")
+    ax_virtual.spines['top'].set_visible(False);
+    ax_virtual.spines['right'].set_visible(False);
 
     ax_physical.set_title("Физическое пространство")
-    ax_physical.set_xlabel(r"$X$")
-    ax_physical.set_ylabel(r"$Y$")
+    ax_physical.set_xlabel(r"$x$")
+    ax_physical.set_ylabel(r"$y$")
+    ax_physical.spines['top'].set_visible(False);
+    ax_physical.spines['right'].set_visible(False);
 
     return fig, (ax_virtual, ax_physical)
 
