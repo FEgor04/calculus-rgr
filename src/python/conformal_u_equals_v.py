@@ -11,13 +11,13 @@ from conformal_utils import w
 def main(args):
     fig, (ax_virtual, ax_physical) = cu.setup()
 
-    x_virtual = np.linspace(-100, 100, 100_000)
-    y_virtual = [x for x in x_virtual]
+    u_virtual = np.linspace(-100, 100, 100_000)
+    v_virtual = np.array([x for x in u_virtual])
 
-    ax_virtual.plot(x_virtual, y_virtual)
+    ax_virtual.plot(u_virtual, v_virtual)
 
-    virtual_numbers = [complex(x_virtual[i], y_virtual[i]) for i in range(len(x_virtual))]
-    physical_numbers = [w(z) for z in virtual_numbers]
+    virtual_numbers = [complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual))]
+    physical_numbers = np.array([w(z) for z in virtual_numbers])
 
     x_physical = [z.real for z in physical_numbers]
     y_physical = [z.imag for z in physical_numbers]
