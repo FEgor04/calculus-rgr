@@ -16,12 +16,14 @@ def setup():
     ax_virtual.set_ylabel(r"$v$")
     ax_virtual.spines['top'].set_visible(False);
     ax_virtual.spines['right'].set_visible(False);
+    ax_virtual.set_aspect('equal', 'box')
 
     ax_physical.set_title("Физическое пространство")
     ax_physical.set_xlabel(r"$x$")
     ax_physical.set_ylabel(r"$y$")
     ax_physical.spines['top'].set_visible(False);
     ax_physical.spines['right'].set_visible(False);
+    ax_physical.set_aspect('equal', 'box')
 
     return fig, (ax_virtual, ax_physical)
 

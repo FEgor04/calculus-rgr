@@ -26,7 +26,9 @@ def main(args):
 
     ax_virtual.grid()
     ax_physical.grid()
-    ax_physical.set_aspect('equal')
+
+    ax_virtual.set_ylim([-1, 4])
+    ax_virtual.set_xlim([-2.5, 2.5])
 
     if args.save:
         pu.save_fig(fig, args.save)
