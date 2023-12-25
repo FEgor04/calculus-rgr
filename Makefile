@@ -11,6 +11,8 @@ LATEXMK_FLAGS := -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
 
 .PHONY: clean format pvc spell
 
+CONFORMAL_FIGURES := $(wildcard figures/conformal_*.pdf)
+
 all: main.pdf
 
 main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
@@ -19,9 +21,10 @@ main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
 pvc: main.tex
 	latexmk $(LATEXMK_FLAGS) -pvc $<
 
-figures/%.pdf: src/python/%.py src/python/conformal_utils.py src/python/plot_utils.py | $(FIGURES_DIR)
+figures/%.pdf: src/python/%.py src/python/plot_utils.py
 	source venv/bin/activate; python3 $< --save $@
 
+$(CONFORMAL_FIGURES): src/python/conformal_utils.py
 
 clean:
 	rm -rf $(FIGURES_DIR) $(AUX_DIR) $(DEP_FILE) main.pdf **/*.bak* src/**/*.bak* *.bbl *.nav *.run.xml *.snm **/*.log src/*/*.log
