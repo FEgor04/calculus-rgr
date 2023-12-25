@@ -39,6 +39,13 @@ def main(args):
     #ax.legend()
     # plt.tight_layout()
 
+    plt.text(-1,  1, f'A', fontsize=12, ha='right', va='bottom')
+    plt.text( 0,  0, f'B', fontsize=12, ha='left',  va='bottom')
+    plt.text(-1, -1, f'C', fontsize=12, ha='right', va='bottom')
+    plt.text( 1, -1, f'D', fontsize=12, ha='right', va='bottom')
+    plt.text( 2,  0, f'E', fontsize=12, ha='left' , va='bottom')
+    plt.text( 1,  1, f'F', fontsize=12, ha='right', va='bottom')
+
     if args.save:
         pu.save_fig(fig, args.save)
     else:
