@@ -10,8 +10,12 @@
 \usepackage{csquotes}
 \usepackage{fixmath}
 \usepackage{arcs}
-\usepackage{physics}
 \everymath{\displaystyle}
+
+\let\Im\relax
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
 
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\rot}{rot}

@@ -14,11 +14,11 @@ def main(args):
     # ax_virtual.set_title(r"\text{Виртуальное пространство}")
     # ax_physical.set_title(r"\text{Физическое пространство}")
 
-    ax_virtual.set_xlabel(r"$U$")
-    ax_virtual.set_ylabel(r"$V$")
+    ax_virtual.set_xlabel(r"$u$")
+    ax_virtual.set_ylabel(r"$v$")
 
-    ax_physical.set_xlabel(r"$X$")
-    ax_physical.set_ylabel(r"$Y$")
+    ax_physical.set_xlabel(r"$x$")
+    ax_physical.set_ylabel(r"$y$")
 
     x_virtual = np.linspace(-100, 100, 100_000)
     y_virtual = [x for x in x_virtual]
