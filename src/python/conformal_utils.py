@@ -17,6 +17,7 @@ def setup():
     ax_virtual.spines['top'].set_visible(False);
     ax_virtual.spines['right'].set_visible(False);
     ax_virtual.set_aspect('equal', 'box')
+    ax_virtual.grid()
 
     ax_physical.set_title("Физическое пространство")
     ax_physical.set_xlabel(r"$x$")
@@ -24,9 +25,10 @@ def setup():
     ax_physical.spines['top'].set_visible(False);
     ax_physical.spines['right'].set_visible(False);
     ax_physical.set_aspect('equal', 'box')
+    ax_physical.grid()
 
     return fig, (ax_virtual, ax_physical)
 
 
 def w(z: complex):
-    return (z+1)/(z-1)
+    return (z-1)/(z+1)

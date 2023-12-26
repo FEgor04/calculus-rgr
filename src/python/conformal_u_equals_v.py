@@ -24,9 +24,6 @@ def main(args):
 
     ax_physical.plot(x_physical, y_physical)
 
-    ax_virtual.grid()
-    ax_physical.grid()
-
     if args.save:
         pu.save_fig(fig, args.save)
     else:
