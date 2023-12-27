@@ -14,31 +14,25 @@ def main(args):
 
     ax = fig.add_subplot(111)
 
-    sampling_rate = 2_500
+    sampling_rate = 1000
     
     x_center = -1
     y_center = 0
-    dx = 1
-    dy = 1
+    dx = 4
+    dy = 4
     
 
-    eps = 0.05
-    x = np.concatenate([
-            np.linspace(x_center - dx, x_center - eps, sampling_rate),
-            np.linspace(x_center + eps, x_center + dx, sampling_rate),
-            ])
-    y = np.concatenate([
-            np.linspace(y_center - dy, y_center - eps, sampling_rate),
-            np.linspace(y_center+dy, y_center+dy, sampling_rate)
-        ])
-    xv, yv = np.meshgrid(x, y)
+    eps = 0.0
+    x = np.linspace(x_center - dx, x_center + dx, sampling_rate)
+    y = np.linspace(y_center - dy, y_center + dy, sampling_rate)
+    xv, yv = np.meshgrid(x, y, sparse=True)
 
-    def f(u, v):
-        return 2 / ( (u+1)**2 + v**2 )
+    def f(x, y):
+        return 2 / ( (x+1)**2 + y**2 )
 
     z = f(xv, yv)
-    levels = np.arange(0, 400, 20)
-    cs = ax.contourf(xv, yv, z, levels=levels)
+    levels = [0, 0.5, 1, 2, 5, 10, 50, 100, 150, 200, 1000, 2000, 4000, 8000]
+    cs = ax.contourf(x, y, z, levels=levels, norm="symlog")
     cbar = fig.colorbar(cs)
     cbar.ax.set_ylabel(r"$n(x,y)$")
 
