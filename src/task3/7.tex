@@ -1,17 +1,8 @@
-\begin{frame}\frametitle{Профиль показателя преломления}
-  Для расчета профиля показателя в физическом пространстве воспользуемся формулой:
-  \begin{equation}
-    n_z =
-    \left|\frac{dw}{dz}\right| n_w =
-    \frac{2}{(x+1)^2+y^2}
-    \label{eq:pok_prelom}
-  \end{equation}
-
-\end{frame}
-
-\begin{frame}\frametitle{Профиль показателя преломления}
-  \begin{figure}
-    \includegraphics[width=0.6\textwidth]{figures/prelom_plot.pdf}
-    \caption{Профиль показателя преломления}
-  \end{figure}
+\begin{frame}\frametitle{Обратное преобразование}
+  Найдем для данного преобразования обратное.
+  Для этого выразим \(z(w)\)
+  \begin{align*}
+    w(z) &= \frac{z-1}{z+1} \\
+    z(w) &= \frac{1+w}{1-w} = 1 + \frac{2w}{1-w}
+  \end{align*}
 \end{frame}
