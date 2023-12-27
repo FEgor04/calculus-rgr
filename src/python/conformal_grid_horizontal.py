@@ -35,23 +35,12 @@ def main(args):
         plot_complex(ax_virtual, virtual, color)
         plot_complex(ax_physical, w(virtual), color)
 
-    def draw_vertical_line(c, color):
-        v_virtual = np.linspace(-10000, 10000, sampling_rate)
-        u_virtual = np.array([c] * len(v_virtual))
-        virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
-
-        plot_complex(ax_virtual, virtual, color)
-        plot_complex(ax_physical, w(virtual), color)
-
-
-
     for i in range(len(c_array)):
         c = c_array[i]
-        c_vertical = colors(i / len(c_array))
-        c_horizontal = colors(i / len(c_array))
-        draw_horizontal_line(c, color=c_horizontal)
+        color = colors(i / len(c_array))
+        draw_horizontal_line(c, color)
         if c > 0:
-            draw_horizontal_line(-c, color=c_horizontal)
+            draw_horizontal_line(-c, color)
         
     ax_virtual.set_xlim([-np.max(c_array) - 2, np.max(c_array) + 2])
     ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])

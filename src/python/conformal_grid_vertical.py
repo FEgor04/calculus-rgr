@@ -27,14 +27,6 @@ def main(args):
 
         ax.plot(x, y, color=color)
 
-    def draw_horizontal_line(c, color):
-        u_virtual = np.linspace(-10000, 10000, sampling_rate)
-        v_virtual = np.array([c] * len(u_virtual))
-        virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
-
-        plot_complex(ax_virtual, virtual, color)
-        plot_complex(ax_physical, w(virtual), color)
-
     def draw_vertical_line(c, color):
         v_virtual = np.linspace(-10000, 10000, sampling_rate)
         u_virtual = np.array([c] * len(v_virtual))
@@ -48,11 +40,10 @@ def main(args):
     center = -1
     for i in range(len(c_array)):
         c = c_array[i]
-        c_vertical = colors(i / len(c_array))
-        c_horizontal = colors(i / len(c_array))
-        draw_vertical_line(center + c, color=c_vertical)
+        color = colors(i / len(c_array))
+        draw_vertical_line(center + c, color)
         if c > 0:
-            draw_vertical_line(center - c, color=c_vertical)
+            draw_vertical_line(center - c, color)
 
     ax_virtual.set_xlim([center -np.max(c_array) - 1, center + np.max(c_array) + 1])
     ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])
