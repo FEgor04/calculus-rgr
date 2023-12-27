@@ -17,10 +17,10 @@ def main(args):
     vertical_color = 'red'
 
     c_array = [0, 0.5, 1, 2, 10, 20, 50]
-    horizontal_colors = ["#ea580c", "#f97316", "#fdba74", "#fed7aa", "#ffedd5"]
-    vertical_colors =   ["#65a30d", "#84cc16", "#a3e635", "#bef264", "#ecfccb"]
+    horizontal_colors = plt.get_cmap("viridis")
+    vertical_colors =   plt.get_cmap("viridis")
 
-    sampling_rate = 1_000_000
+    sampling_rate = 500_000
 
     def plot_complex(ax, numbers, color):
         x = [z.real for z in numbers]
@@ -48,12 +48,8 @@ def main(args):
 
     for i in range(len(c_array)):
         c = c_array[i]
-        c_vertical = "red"
-        c_horizontal = "blue"
-        if i < len(vertical_colors):
-            c_vertical = vertical_colors[i]
-        if i < len(horizontal_colors):
-            c_horizontal = horizontal_colors[i]
+        c_vertical = vertical_colors(i / len(c_array))
+        c_horizontal = horizontal_colors(i / len(c_array))
         draw_horizontal_line(c, color=c_horizontal)
         draw_vertical_line(c, color=c_vertical)
         if c > 0:
