@@ -57,8 +57,12 @@ def main(args):
     ax_virtual.set_xlim([center -np.max(c_array) - 1, center + np.max(c_array) + 1])
     ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])
 
-    ax_physical.set_xlim([-5 + 1, 1 + 5])
-    ax_physical.set_ylim([-5, 5])
+    ax_physical.set_xlim([-4, 6])
+    ax_physical.set_ylim([-4, 4])
+
+    center = 1
+    ax_physical.set_xticks([center] + np.arange(-5, 4, 2) + center)
+    ax_physical.set_yticks(np.concatenate([np.arange(-2, 3, 1)]))
     
     if args.save:
         pu.save_fig(fig, args.save)
