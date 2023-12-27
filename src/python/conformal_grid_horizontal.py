@@ -10,8 +10,6 @@ from conformal_utils import w
 
 def main(args):
     fig, (ax_virtual, ax_physical) = cu.setup()
-    ax_virtual.set_aspect('auto')
-    ax_physical.set_aspect('auto')
 
     horizontal_color = 'blue'
     vertical_color = 'red'
@@ -45,7 +43,7 @@ def main(args):
     ax_virtual.set_xlim([-np.max(c_array) - 2, np.max(c_array) + 2])
     ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])
 
-    ax_physical.set_xlim([-5, 5])
+    ax_physical.set_xlim([-4, 6])
     ax_physical.set_ylim([-5, 5])
 
     center = 1
