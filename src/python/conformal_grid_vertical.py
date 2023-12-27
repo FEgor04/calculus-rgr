@@ -16,9 +16,8 @@ def main(args):
     horizontal_color = 'blue'
     vertical_color = 'red'
 
-    c_array = [0, 0.5, 1, 2, 10, 20, 50]
-    horizontal_colors = plt.get_cmap("viridis")
-    vertical_colors =   plt.get_cmap("viridis")
+    c_array = [0, 0.5, 1, 2]
+    colors = plt.get_cmap("viridis")
 
     sampling_rate = 500_000
 
@@ -46,20 +45,19 @@ def main(args):
 
 
 
+    center = -1
     for i in range(len(c_array)):
         c = c_array[i]
-        c_vertical = vertical_colors(i / len(c_array))
-        c_horizontal = horizontal_colors(i / len(c_array))
-        draw_horizontal_line(c, color=c_horizontal)
-        draw_vertical_line(c, color=c_vertical)
+        c_vertical = colors(i / len(c_array))
+        c_horizontal = colors(i / len(c_array))
+        draw_vertical_line(center + c, color=c_vertical)
         if c > 0:
-            draw_horizontal_line(-c, color=c_horizontal)
-            draw_vertical_line(-c, color=c_vertical)
-        
-    ax_virtual.set_xlim([-15, 15])
-    ax_virtual.set_ylim([-15, 15])
+            draw_vertical_line(center - c, color=c_vertical)
 
-    ax_physical.set_xlim([-5, 5])
+    ax_virtual.set_xlim([center -np.max(c_array) - 1, center + np.max(c_array) + 1])
+    ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])
+
+    ax_physical.set_xlim([-5 + 1, 1 + 5])
     ax_physical.set_ylim([-5, 5])
     
     if args.save:
