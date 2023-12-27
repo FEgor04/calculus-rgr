@@ -58,6 +58,10 @@ def main(args):
 
     ax_physical.set_xlim([-5, 5])
     ax_physical.set_ylim([-5, 5])
+
+    center = 1
+    ax_physical.set_xticks(np.arange(-4, 5, 2) + center)
+    ax_physical.set_yticks(list(range(-4, 5, 2)) + [-1, 1])
     
     if args.save:
         pu.save_fig(fig, args.save)
