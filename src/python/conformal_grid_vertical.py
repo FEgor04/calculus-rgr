@@ -43,7 +43,7 @@ def main(args):
         if c > 0:
             draw_vertical_line(center - c, color)
 
-    ax_virtual.set_xlim([-np.max(c_array) - 2, np.max(c_array) + 2])
+    ax_virtual.set_xlim([-5, 3])
     ax_virtual.set_ylim([-np.max(c_array) - 2, np.max(c_array) + 2])
 
     ax_physical.set_xlim([-4, 6])
