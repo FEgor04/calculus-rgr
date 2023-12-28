@@ -9,17 +9,17 @@
 
   Воспользумеся теоремой \textit{Остроградского-Гаусса}:
   \begin{equation*}
-    \oiint\limits_{\Sigma}\left( \overrightarrow{\vec {a}}, \overrightarrow{\vec {n}} \right) d\sigma = \iiint\limits_V div \overrightarrow{\vec {a}} dxdydz 
+    \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V div \vec {a} dxdydz 
   \end{equation*}
 \end{frame}
 
 
 \begin{frame}\frametitle{Вычисление потока поля}
-  Найдем дивергент:
+  Найдем дивергенцию:
   \begin{equation*}
-    div \overrightarrow{\vec a} = (\sin zy^2) + \sqrt{2} x + (\sqrt{2+y} - 3)
+    div \vec a = \frac{\partial a_x}{\partial x} +  \frac{\partial a_y}{\partial y} +  \frac{\partial a_z}{\partial z} = 0 + 0 - 3 = -3 
 	\end{equation*}
-	
+
   Поскольку $x^2 + z^2 = 1$ — это цилиндр, а $x^2 + y + z^2 = 2$ — параболоид, нам удобно перейти к цилиндрическим координатам:
 
   \begin{equation*}
@@ -29,14 +29,33 @@
       z = r \cdot \sin(\theta)
     \end{cases}
   \end{equation*}
-  
-\end{frame}
+
+  Расставим пределы интегрирования:
+  \begin{align*}
+    r \in [0, 1], \
+    \theta \in [0, 2\pi], \ 
+    y = 2 - x^2 - y^2 = 2 - r^2
+  \end{align*}
+  \end{frame}
 
 \begin{frame}\frametitle{Вычисление потока поля} 
 
 Тогда
   \begin{equation*}
-    \oiint\limits_{\Sigma}\left( \overrightarrow{\vec {a}}, \overrightarrow{\vec {n}} \right) d\sigma = \iiint\limits_V (\sin zy^2) + \sqrt{2} x + (\sqrt{2+y} - 3) dV
+    \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
   \end{equation*}
-
+  
+  \begin{equation*}
+    = -3 \int\limits_{0}^{2 \pi} d \theta
+    \int\limits_{0}^{1} r~dr 
+    \int\limits_{0}^{2-r^2} dy 
+    = -3 \int\limits_{0}^{2 \pi} d \theta
+    \int\limits_{0}^{1} (2-r^2)r~dr 
+  \end{equation*}
+ 
+  \begin{equation*}
+    = -3 \cdot 2 \pi \cdot
+    (1 - \frac{1}{4})
+    = - \frac{9}{2}\pi
+  \end{equation*}
 \end{frame}
