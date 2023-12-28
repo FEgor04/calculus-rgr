@@ -12,14 +12,14 @@
 
 	Возьмем в качестве $A$ точку $(0; 0)$.
 	Так как интеграл в уравнении (\ref{eq:u_integral}) не зависит от пути,
-	то разобьем его на две линии $(0; 0) - (R_x: 0) - (R_x; R_y)$
+	то разобьем его на две линии $(0; 0) - (x: 0) - (x; y)$
 
 	\begin{align*}
-		U(R) & = \int\limits_{(0; 0)}^{(R_x; 0)} \left(e^x dx + (-e^y dy) \right) +
-		\int\limits_{(R_x; 0)}^{(R_x; R_y)} \left(e^x dx + (-e^y dy) \right) =      \\
+		U(x, y) & = \int\limits_{(0; 0)}^{(x; 0)} \left(e^x dx + (-e^y dy) \right) +
+		\int\limits_{(x; 0)}^{(x; y)} \left(e^x dx + (-e^y dy) \right) =      \\
 		     & =
-		\int\limits_{0}^{R_x} e^x \, dx - \int\limits_{0}^{R_y} e^y \, dy =
-		e^{R_x} - e^{R_y}
+		\int\limits_{0}^{x} e^x \, dx - \int\limits_{0}^{y} e^y \, dy =
+		e^{x} - e^{y}
 	\end{align*}
 
 \end{frame}
@@ -34,5 +34,5 @@
 		= \vec H
 	\end{equation*}
 
-	Таким образом, \(U(R) = e^{R_x} - e^{R_y}\) -- потенциал векторного поля \(\vec H\).
+	Таким образом, \(U(x,y) = e^{x} - e^{y}\) -- потенциал векторного поля \(\vec H\).
 \end{frame}
