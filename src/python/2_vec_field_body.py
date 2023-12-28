@@ -21,15 +21,15 @@ def main(args):
     y = np.linspace(-1, 0, 400)
     z3 = y
     z4 = -y 
-    ax.plot(y, z3, label=r'$y + sqrt(z^2) = 0$', color='blue')
-    ax.plot(y, z4, color='blue')
+    ax.plot(y, z3, label=r'$y + \sqrt{z^2} = 0$', color='red')
+    ax.plot(y, z4, color='red')
 
     # For y + z^2 = 2, z = sqrt(2-y)
     y = np.linspace(1, 2, 400)
     z5 = np.sqrt(2-y)
     z6 = -np.sqrt(2-y)
-    ax.plot(y, z5, label=r'$y + z^2 = 2$', color='blue')
-    ax.plot(y, z6, color='blue')
+    ax.plot(y, z5, label=r'$y + z^2 = 2$', color='green')
+    ax.plot(y, z6, color='green')
     
     ax.set_xlabel('$y$')
     ax.set_ylabel('$z$')
@@ -46,6 +46,8 @@ def main(args):
     plt.text( 2,  0, f'E', fontsize=12, ha='left' , va='bottom')
     plt.text( 1,  1, f'F', fontsize=12, ha='right', va='bottom')
 
+    plt.legend(bbox_to_anchor=(1.05, 1),
+                         loc='upper left', borderaxespad=0.)
     if args.save:
         pu.save_fig(fig, args.save)
     else:
