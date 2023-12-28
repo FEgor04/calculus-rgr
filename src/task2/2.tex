@@ -7,9 +7,9 @@
 	вокруг оси \(Oy\), в направлении внешней нормали поверхности тела \(T\)
 
 
-	Воспользумеся теоремой \textit{Остроградского-Гаусса}:
+	Воспользуемся теоремой \textit{Остроградского -- Гаусса}:
 	\begin{equation*}
-		\oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V div \vec {a} dxdydz
+		\oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) \, d\sigma = \iiint\limits_V \Div \vec {a} \, dxdydz
 	\end{equation*}
 \end{frame}
 
@@ -17,16 +17,16 @@
 \begin{frame}\frametitle{Вычисление потока поля}
 	Найдем дивергенцию:
 	\begin{equation*}
-		div \vec a = \frac{\partial a_x}{\partial x} +  \frac{\partial a_y}{\partial y} +  \frac{\partial a_z}{\partial z} = 0 + 0 - 3 = -3
+		\Div \vec a = \frac{\partial a_x}{\partial x} +  \frac{\partial a_y}{\partial y} +  \frac{\partial a_z}{\partial z} = 0 + 0 - 3 = -3
 	\end{equation*}
 
 	Поскольку $x^2 + z^2 = 1$ — это цилиндр, а $x^2 + y + z^2 = 2$ — параболоид, нам удобно перейти к цилиндрическим координатам:
 
 	\begin{equation*}
 		\begin{cases}
-			x = r \cdot \cos(\theta) \\
+			x = r \cdot \cos \theta \\
 			y = y                    \\
-			z = r \cdot \sin(\theta)
+			z = r \cdot \sin \theta
 		\end{cases}
 	\end{equation*}
 
@@ -46,11 +46,11 @@
 	\end{equation*}
 
 	\begin{equation*}
-		= -3 \int\limits_{0}^{2 \pi} d \theta
-		\int\limits_{0}^{1} r~dr
+		= -3 \int\limits_{0}^{2 \pi} \, d \theta
+		\int\limits_{0}^{1} r \, dr
 		\int\limits_{0}^{2-r^2} dy
-		= -3 \int\limits_{0}^{2 \pi} d \theta
-		\int\limits_{0}^{1} (2-r^2)r~dr
+		= -3 \int\limits_{0}^{2 \pi} \, d \theta
+		\int\limits_{0}^{1} (2-r^2)r \, dr
 	\end{equation*}
 
 	\begin{equation*}
@@ -60,7 +60,7 @@
 	\end{equation*}
 
 	\begin{equation*}
-		\Phi_{\text{дна}} = \iint\limits_{D}(\vec{a},\vec{n})d\sigma =  \iint\limits_{D}(\vec{r},\vec{n})d\sigma = 0 ~~ \text{т.к.} ~ \widehat{(\vec{r}, \vec{n})} = \frac{\pi}{2}
+		\Phi_{\text{дна}} = \iint\limits_{D}(\vec{a},\vec{n}) \, d\sigma =  \iint\limits_{D}(\vec{r},\vec{n}) \, d\sigma = 0 \; \text{т.к.} \,  \widehat{(\vec{r}, \vec{n})} = \frac{\pi}{2}
 	\end{equation*}
 
 	\begin{equation*}
