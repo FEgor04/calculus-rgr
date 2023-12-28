@@ -42,7 +42,7 @@
 
 Тогда
   \begin{equation*}
-    \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
+    \Phi_{\text{вращения}} = \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
   \end{equation*}
   
   \begin{equation*}
@@ -57,5 +57,13 @@
     = -3 \cdot 2 \pi \cdot
     (1 - \frac{1}{4})
     = - \frac{9}{2}\pi
+  \end{equation*}
+
+  \begin{equation*}
+    \Phi_{\text{дна}} = \iint\limits_{D}(\vec{a},\vec{n})d\sigma =  \iint\limits_{D}(\vec{r},\vec{n})d\sigma = 0 ~~ \text{т.к.} ~ \widehat{(\vec{r}, \vec{n})} = \frac{\pi}{2}
+  \end{equation*}
+
+  \begin{equation*}
+    \Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi
   \end{equation*}
 \end{frame}
