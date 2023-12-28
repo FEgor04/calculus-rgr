@@ -5,14 +5,12 @@
 	\end{equation*}
 		      через боковую поверхность тела \(T\), образованную вращением дуги \(AFEDC\)
 		      вокруг оси \(Oy\), в направлении внешней нормали поверхности тела \(T\)
- 
 
   Воспользумеся теоремой \textit{Остроградского-Гаусса}:
   \begin{equation*}
     \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V div \vec {a} dxdydz 
   \end{equation*}
 \end{frame}
-
 
 \begin{frame}\frametitle{Вычисление потока поля}
   Найдем дивергенцию:
@@ -30,17 +28,18 @@
     \end{cases}
   \end{equation*}
 
+
+\end{frame}
+
+\begin{frame}\frametitle{Вычисление потока поля} 
   Расставим пределы интегрирования:
   \begin{align*}
     r \in [0, 1], \
     \theta \in [0, 2\pi], \ 
-    y = 2 - x^2 - y^2 = 2 - r^2
+    y = 2 - x^2 - z^2 = 2 - r^2
   \end{align*}
-  \end{frame}
 
-\begin{frame}\frametitle{Вычисление потока поля} 
-
-Тогда
+  Тогда
   \begin{equation*}
     \Phi_{\text{вращения}} = \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
   \end{equation*}
@@ -59,11 +58,35 @@
     = - \frac{9}{2}\pi
   \end{equation*}
 
+\end{frame}
+
+\begin{frame}\frametitle{Вычисление потока поля}
+
+  Расставим пределы интегрирования для конусовидного дна тела: 
+  \begin{align*}
+    r \in [0,1] \
+    \theta \in [0, 2\pi] \ 
+    y = -\sqrt{x^2 + z^2} = -\sqrt{r}
+  \end{align*}
+
+  Тогда
   \begin{equation*}
-    \Phi_{\text{дна}} = \iint\limits_{D}(\vec{a},\vec{n})d\sigma =  \iint\limits_{D}(\vec{r},\vec{n})d\sigma = 0 ~~ \text{т.к.} ~ \widehat{(\vec{r}, \vec{n})} = \frac{\pi}{2}
+    \Phi_{\text{дна}}
+    =  \oiint\limits_{D}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_D -3 dD
+  \end{equation*}
+ 
+  \begin{equation*}
+    = -3 \int\limits_{0}^{2 \pi} d \theta
+    \int\limits_{0}^{1} r~dr 
+    \int\limits_{-\sqrt{r}}^{0} dy 
+    = -3 \int\limits_{0}^{2 \pi} d \theta
+    \int\limits_{0}^{1}r^{\frac{3}{2}}~dr
+    = -3 \cdot 2\pi \cdot \frac{2}{3} = -4 \pi
   \end{equation*}
 
+
   \begin{equation*}
-    \Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi
+    \Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi - (-6 \pi) = \frac{3}{2}\pi
   \end{equation*}
+
 \end{frame}
