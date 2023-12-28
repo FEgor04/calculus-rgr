@@ -1,11 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
+import plot_utils as pu
 
 def main(args):
     # Setting up the 3D plot
+    pu.figure_setup()
     fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(projection='3d')
+    fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
 
     # Range of values for x, y, z
     x = np.linspace(-1, 1, 400)
@@ -36,9 +39,10 @@ def main(args):
     #ax.plot_surface(X, Y3, Z, rstride=1, cstride=1, cmap='viridis', edgecolor='none')
 
     # Setting labels
-    ax.set_xlabel('X axis')
-    ax.set_ylabel('Y axis')
-    ax.set_zlabel('Z axis')
+    ax.set_xlabel(r'$x$')
+    ax.set_ylabel(r'$y$')
+    ax.set_zlabel(r'$z$')
+    ax.set_xticks([-1.0, -0.5, 0, 0.5, 1.0])
     ax.view_init(elev=10, azim=25)
 
     if args.save:
