@@ -3,7 +3,7 @@
 	\begin{equation*}
 		\vec a = (\sin zy^2) \vec i + \sqrt{2} x \vec j + (\sqrt{2+y} -3z) \vec k
 	\end{equation*}
-  через боковую поверхность тела \(T\), образованную вращением дуги \(AFEDC\)
+	через боковую поверхность тела \(T\), образованную вращением дуги \(AFEDC\)
 	вокруг оси \(Oy\), в направлении внешней нормали поверхности тела \(T\)
 
 	Воспользуемся теоремой \textit{Остроградского -- Гаусса}:
@@ -23,69 +23,69 @@
 	\begin{equation*}
 		\begin{cases}
 			x = r \cdot \cos \theta \\
-			y = y                    \\
+			y = y                   \\
 			z = r \cdot \sin \theta
 		\end{cases}
 	\end{equation*}
 
 \end{frame}
 
-\begin{frame}\frametitle{Вычисление потока поля} 
-  Расставим пределы интегрирования:
-  \begin{align*}
-    r \in [0, 1], \
-    \theta \in [0, 2\pi], \ 
-    y = 2 - x^2 - z^2 = 2 - r^2
-  \end{align*}
+\begin{frame}\frametitle{Вычисление потока поля}
+	Расставим пределы интегрирования:
+	\begin{align*}
+		r \in [0, 1], \
+		\theta \in [0, 2\pi], \
+		y = 2 - x^2 - z^2 = 2 - r^2
+	\end{align*}
 
-  Тогда
-  \begin{equation*}
-    \Phi_{\text{вращения}} = \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
-  \end{equation*}
-  
-  \begin{equation*}
-    = -3 \int\limits_{0}^{2 \pi} d \theta
-    \int\limits_{0}^{1} r~dr 
-    \int\limits_{0}^{2-r^2} dy 
-    = -3 \int\limits_{0}^{2 \pi} d \theta
-    \int\limits_{0}^{1} (2-r^2)r~dr 
-  \end{equation*}
- 
-  \begin{equation*}
-    = -3 \cdot 2 \pi \cdot
-    (1 - \frac{1}{4})
-    = - \frac{9}{2}\pi
-  \end{equation*}
+	Тогда
+	\begin{equation*}
+		\Phi_{\text{вращения}} = \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
+	\end{equation*}
+
+	\begin{equation*}
+		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{0}^{1} r~dr
+		\int\limits_{0}^{2-r^2} dy
+		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{0}^{1} (2-r^2)r~dr
+	\end{equation*}
+
+	\begin{equation*}
+		= -3 \cdot 2 \pi \cdot
+		(1 - \frac{1}{4})
+		= - \frac{9}{2}\pi
+	\end{equation*}
 
 \end{frame}
 
 \begin{frame}\frametitle{Вычисление потока поля}
 
-  Расставим пределы интегрирования для конусовидного дна тела: 
-  \begin{align*}
-    r \in [0,1] \
-    \theta \in [0, 2\pi] \ 
-    y = -\sqrt{x^2 + z^2} = -\sqrt{r}
-  \end{align*}
+	Расставим пределы интегрирования для конусовидного дна тела:
+	\begin{align*}
+		r \in [0,1] \
+		\theta \in [0, 2\pi] \
+		y = -\sqrt{x^2 + z^2} = -\sqrt{r}
+	\end{align*}
 
-  Тогда
-  \begin{equation*}
-    \Phi_{\text{дна}}
-    =  \oiint\limits_{D}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_D -3 dD
-  \end{equation*}
- 
-  \begin{equation*}
-    = -3 \int\limits_{0}^{2 \pi} d \theta
-    \int\limits_{0}^{1} r~dr 
-    \int\limits_{-\sqrt{r}}^{0} dy 
-    = -3 \int\limits_{0}^{2 \pi} d \theta
-    \int\limits_{0}^{1}r^{\frac{3}{2}}~dr
-    = -3 \cdot 2\pi \cdot \frac{2}{3} = -4 \pi
-  \end{equation*}
+	Тогда
+	\begin{equation*}
+		\Phi_{\text{дна}}
+		=  \oiint\limits_{D}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_D -3 dD
+	\end{equation*}
+
+	\begin{equation*}
+		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{0}^{1} r~dr
+		\int\limits_{-\sqrt{r}}^{0} dy
+		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{0}^{1}r^{\frac{3}{2}}~dr
+		= -3 \cdot 2\pi \cdot \frac{2}{3} = -4 \pi
+	\end{equation*}
 
 
-  \begin{equation*}
-    \Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi - (-6 \pi) = \frac{3}{2}\pi
-  \end{equation*}
+	\begin{equation*}
+		\Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi - (-6 \pi) = \frac{3}{2}\pi
+	\end{equation*}
 
 \end{frame}
