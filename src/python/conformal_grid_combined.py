@@ -19,7 +19,7 @@ def main(args):
     c_array = [0, 0.5, 1, 2]
     colors = plt.get_cmap("viridis")
 
-    sampling_rate = 500_000
+    sampling_rate = 10_000
 
     def plot_complex(ax, numbers, color):
         x = [z.real for z in numbers]
@@ -27,8 +27,10 @@ def main(args):
 
         ax.plot(x, y, color=color)
 
-    def draw_horizontal_line(c, color):
-        u_virtual = np.linspace(-10000, 10000, sampling_rate)
+    u_lim = 10
+
+    def draw_horizontal_line(c, cntolor):
+        u_virtual = np.linspace(-u_lim, u_lim, sampling_rate)
         v_virtual = np.array([c] * len(u_virtual))
         virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
 
@@ -36,7 +38,7 @@ def main(args):
         plot_complex(ax_physical, w(virtual), color)
 
     def draw_vertical_line(c, color):
-        v_virtual = np.linspace(-10000, 10000, sampling_rate)
+        v_virtual = np.linspace(-u_lim, u_lim, sampling_rate)
         u_virtual = np.array([c] * len(v_virtual))
         virtual = np.array([ complex(u_virtual[i], v_virtual[i]) for i in range(len(u_virtual)) ])
 
@@ -59,6 +61,8 @@ def main(args):
 
     ax_physical.set_xlim([-4, 6])
     ax_physical.set_ylim([-5, 5])
+
+    plt.legend()
 
 
     if args.save:

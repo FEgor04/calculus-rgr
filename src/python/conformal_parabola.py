@@ -11,7 +11,7 @@ from conformal_utils import w
 def main(args):
     fig, (ax_virtual, ax_physical) = cu.setup()
 
-    u_virtual = np.linspace(-100, 100, 100_000)
+    u_virtual = np.linspace(-4, 4, 100_000)
     v_virtual = u_virtual**2
 
     ax_virtual.plot(u_virtual, v_virtual)

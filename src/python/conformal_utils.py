@@ -26,6 +26,9 @@ def setup():
     ax_physical.spines['right'].set_visible(False);
     ax_physical.set_aspect('equal', 'box')
     ax_physical.grid()
+    ax_physical.scatter(1, 0, color='red', s=40, marker='x', label=r'выколотая точка $w = 1$')
+
+    plt.legend()
 
     return fig, (ax_virtual, ax_physical)
 
