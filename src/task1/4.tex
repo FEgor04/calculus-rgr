@@ -3,9 +3,8 @@
 
 	\begin{equation*}
 		U(R) =
-		\int\limits_{\widehat{AR}} \vec H \, d \vec r
+		\int\limits_{\widehat{AR}} \vec H \, d \vec r + C
 		\label{eq:u_integral}
-		% TODO: добавить источник формулы
 	\end{equation*}
 
 	Возьмем в качестве $A$ точку $(0; 0)$.
@@ -14,10 +13,10 @@
 
 	\begin{align*}
 		U(x, y) & = \int\limits_{(0; 0)}^{(x; 0)} \left(e^x dx + (-e^y dy) \right) +
-		\int\limits_{(x; 0)}^{(x; y)} \left(e^x dx + (-e^y dy) \right) =             \\
+		\int\limits_{(x; 0)}^{(x; y)} \left(e^x dx + (-e^y dy) \right) + C =             \\
 		        & =
-		\int\limits_{0}^{x} e^x \, dx - \int\limits_{0}^{y} e^y \, dy =
-		e^{x} - e^{y}
+		\int\limits_{0}^{x} e^x \, dx - \int\limits_{0}^{y} e^y \, dy + C =
+		e^{x} - e^{y} + C
 	\end{align*}
 
 \end{frame}
