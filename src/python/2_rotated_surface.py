@@ -17,6 +17,12 @@ def main(args):
     X, Z = np.meshgrid(x, z)
     Y, Z = np.meshgrid(y, z)
 
+    # First equation: circle
+    theta = np.linspace(0, 2 * np.pi, 100)
+    y0 = np.linspace(-1, 1, 100) 
+    z0 = np.sin(theta)
+    x0 = np.cos(theta)
+
     # Second equation: x^2 + z^2 = 1 {-1 <= y <= 1}
     theta = np.linspace(0, 2 * np.pi, 100)
     z = np.linspace(-1, 1, 100)
@@ -29,6 +35,7 @@ def main(args):
     Y3[Y3 < 1] = np.nan  # Apply the condition y >= 1
 
     # Plotting
+    ax.plot_wireframe(x0, y0, z0, color='r')
     ax.plot_surface(x, z, y, color='b', alpha=0.4)
     ax.plot_surface(X, Y3, Z, color='g', alpha=0.8)
 
