@@ -35,7 +35,7 @@ def main(args):
     Y3[Y3 < 1] = np.nan  # Apply the condition y >= 1
 
     # Plotting
-    ax.plot_wireframe(x0, y0, z0, color='r')
+    # ax.plot_wireframe(x0, y0, z0, color='r')
     ax.plot_surface(x, z, y, color='b', alpha=0.4)
     ax.plot_surface(X, Y3, Z, color='g', alpha=0.8)
 
