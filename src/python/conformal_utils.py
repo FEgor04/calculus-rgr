@@ -17,8 +17,9 @@ def setup():
     ax_virtual.spines['top'].set_visible(False);
     ax_virtual.spines['right'].set_visible(False);
     ax_virtual.set_aspect('equal', 'box')
-    ax_virtual.scatter(-1, 0, color='red', s=40, marker='x', label=r'выколотая точка $z = -1$')
     ax_virtual.grid()
+    ax_virtual.scatter(-1, 0, color='red', s=40, marker='*', label=r'выколотая точка $z = -1$')
+    ax_virtual.legend()
 
     ax_physical.set_title("Физическое пространство")
     ax_physical.set_xlabel(r"$x$")
@@ -28,8 +29,7 @@ def setup():
     ax_physical.set_aspect('equal', 'box')
     ax_physical.grid()
     ax_physical.scatter(1, 0, color='red', s=40, marker='x', label=r'выколотая точка $w = 1$')
-
-    plt.legend()
+    ax_physical.legend()
 
     return fig, (ax_virtual, ax_physical)
 
