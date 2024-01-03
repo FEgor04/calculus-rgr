@@ -17,6 +17,7 @@ def setup():
     ax_virtual.spines['top'].set_visible(False);
     ax_virtual.spines['right'].set_visible(False);
     ax_virtual.set_aspect('equal', 'box')
+    ax_virtual.scatter(-1, 0, color='red', s=40, marker='x', label=r'выколотая точка $z = -1$')
     ax_virtual.grid()
 
     ax_physical.set_title("Физическое пространство")
