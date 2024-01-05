@@ -21,7 +21,7 @@ main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
 pvc: main.tex
 	latexmk $(LATEXMK_FLAGS) -pvc $<
 
-figures/%.pdf: src/python/%.py src/python/plot_utils.py
+figures/%.pdf: src/python/%.py src/python/plot_utils.py plot-dependencies
 	source venv/bin/activate; python3 $< --save $@
 
 $(CONFORMAL_FIGURES): src/python/conformal_utils.py
@@ -35,6 +35,12 @@ format:
 
 spell:
 	hunspell -d ru_RU,en_US -l -t src/**/*.tex src/*.tex main.tex
+
+venv:
+	python3 -m venv $@
+
+plot-dependencies: venv
+	source venv/bin/activate; pip install matplotlib numpy
 
 $(FIGURES_DIR) $(AUX_DIR):
 	mkdir $@
