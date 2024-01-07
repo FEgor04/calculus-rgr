@@ -10,6 +10,14 @@ def main(args):
     ax = fig.add_subplot(projection='3d')
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
 
+    theta = np.linspace(0, 2*np.pi, 100)
+    r = np.linspace(0, 1, 100)  # Radius values from 0 to 1
+    theta, r = np.meshgrid(theta, r)  # Create a 2D grid of theta and r
+
+    x0 = r * np.cos(theta)
+    y0 = -1 * np.ones_like(x0)
+    z0 = r * np.sin(theta)
+
     # Range of values for x, y, z
     x = np.linspace(-1, 1, 400)
     y = np.linspace(-1, 2, 400)
@@ -33,9 +41,10 @@ def main(args):
     Y3[Y3 < 1] = np.nan  # Apply the condition y >= 1
 
     # Plotting
-    ax.plot_wireframe(X, Y1, Z, color='r')
-    ax.plot_surface(x, z, y, color='grey', alpha=0.1)
-    ax.plot_surface(X, Y3, Z, color='grey', alpha=0.1)
+    ax.plot_surface(x0, y0, z0, color='crimson', alpha=0.8)
+    ax.plot_surface(X, Y1, Z,   color='red',     alpha=0.6)
+    ax.plot_surface(x, z, y,    color='grey',    alpha=0.1)
+    ax.plot_surface(X, Y3, Z,   color='grey',    alpha=0.1)
 
     # Setting labels
     ax.set_xlabel(r'$x$')
