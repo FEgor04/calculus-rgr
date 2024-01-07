@@ -21,7 +21,7 @@ main.pdf: main.tex $(AUX_DIR) $(FIGURES_DIR)
 pvc: main.tex
 	latexmk $(LATEXMK_FLAGS) -pvc $<
 
-figures/%.pdf: src/python/%.py src/python/plot_utils.py plot-dependencies
+figures/%.pdf: src/python/%.py src/python/plot_utils.py venv/dependencies_touchfile venv/bin/activate
 	source venv/bin/activate; python3 $< --save $@
 
 $(CONFORMAL_FIGURES): src/python/conformal_utils.py
@@ -36,11 +36,12 @@ format:
 spell:
 	hunspell -d ru_RU,en_US -l -t src/**/*.tex src/*.tex main.tex
 
-venv:
+venv/bin/activate:
 	python3 -m venv $@
 
-plot-dependencies: venv
-	source venv/bin/activate; pip install matplotlib numpy
+venv/dependencies_touchfile: venv/bin/activate
+	source $<; pip install numpy matplotlib
+	touch $@
 
 $(FIGURES_DIR) $(AUX_DIR):
 	mkdir $@
