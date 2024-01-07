@@ -1,36 +1,29 @@
 \begin{frame}\frametitle{Вычисление потока поля}
-	Для нахождения потока искомого потока, найдем поток через тело вращения (Рис. \ref{fig:vec_field_rotated_surface}) и вычтем из него поток через дно, которое замкнем (Рис. \ref{fig:vec_field_bottom}):
+	Для нахождения искомого потока, найдем поток через тело вращения
+  (Рис. \ref{fig:vec_field_rotated_surface}) и вычтем из него поток
+  через конусовидное дно, которое замкнем плоскостью \(y = -1\) (Рис. \ref{fig:vec_field_bottom}):
 
 	\begin{equation*}
 		\Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}}
 	\end{equation*}
 
-
-\end{frame}
-
-\begin{frame}\frametitle{Вычисление потока поля}
-	Для нахождения потока поля
-	\begin{equation*}
-		\vec a = (\sin zy^2) \vec i + \sqrt{2} x \vec j + (\sqrt{2+y} -3z) \vec k
-	\end{equation*}
-	через боковую поверхность тела \(T\), образованную вращением дуги \(AFEDC\)
-	вокруг оси \(Oy\), в направлении внешней нормали поверхности тела \(T\)
-
-	Воспользуемся теоремой \textit{Остроградского -- Гаусса}:
+  Так как в обеих случаях тела замкнуты, то для нахождения
+  потока поля через них воспользуемся теоремой \textit{Остроградского -- Гаусса}:
 	\begin{equation*}
 		\oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) \, d\sigma = \iiint\limits_V \Div \vec {a} \, dxdydz
 	\end{equation*}
-\end{frame}
 
-\begin{frame}\frametitle{Вычисление потока поля}
 	Найдем дивергенцию:
 	\begin{equation*}
 		\Div \vec a = \frac{\partial a_x}{\partial x} +  \frac{\partial a_y}{\partial y} +  \frac{\partial a_z}{\partial z} = 0 + 0 - 3 = -3
 	\end{equation*}
+\end{frame}
 
-	Поскольку $x^2 + z^2 = 1$ — это цилиндр, а $x^2 + y + z^2 = 2$ — параболоид, нам удобно перейти к цилиндрическим координатам:
+\begin{frame}\frametitle{Вычисление потока поля: тело вращения}
+  Вычислим поток через тело вращения.
 
-	\begin{equation*}
+  Перейдем к цилиндрическим координатам:
+  \begin{equation*}
 		\begin{cases}
 			x = r \cdot \cos \theta \\
 			y = y                   \\
@@ -38,38 +31,28 @@
 		\end{cases}
 	\end{equation*}
 
-\end{frame}
-
-\begin{frame}\frametitle{Вычисление потока поля}
-	Расставим пределы интегрирования:
+Расставим пределы интегрирования:
 	\begin{align*}
 		r \in [0, 1], \
 		\theta \in [0, 2\pi], \
 		y = 2 - x^2 - z^2 = 2 - r^2
 	\end{align*}
-
+	
 	Тогда
-	\begin{equation*}
-		\Phi_{\text{вращения}} = \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
-	\end{equation*}
-
-	\begin{equation*}
+	\begin{align*}
+    \Phi_{\text{вращения}} &= \oiint\limits_{\Sigma}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_V -3 dV
 		= -3 \int\limits_{0}^{2 \pi} d \theta
 		\int\limits_{0}^{1} r~dr
-		\int\limits_{0}^{2-r^2} dy
-		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{0}^{2-r^2} dy = \\
+    &= -3 \int\limits_{0}^{2 \pi} d \theta
 		\int\limits_{0}^{1} (2-r^2)r~dr
-	\end{equation*}
-
-	\begin{equation*}
 		= -3 \cdot 2 \pi \cdot
 		(1 - \frac{1}{4})
 		= - \frac{9}{2}\pi
-	\end{equation*}
-
+	\end{align*}
 \end{frame}
 
-\begin{frame}\frametitle{Вычисление потока поля}
+\begin{frame}\frametitle{Вычисление потока поля: дно тела}
 
 	Расставим пределы интегрирования для конусовидного дна тела:
 	\begin{align*}
@@ -79,23 +62,18 @@
 	\end{align*}
 
 	Тогда
-	\begin{equation*}
+	\begin{align*}
 		\Phi_{\text{дна}}
-		=  \oiint\limits_{D}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_D -3 dD
-	\end{equation*}
-
-	\begin{equation*}
+    &=  \oiint\limits_{D}\left( \vec {a}, \vec {n} \right) d\sigma = \iiint\limits_D -3 dD
 		= -3 \int\limits_{0}^{2 \pi} d \theta
 		\int\limits_{0}^{1} r~dr
-		\int\limits_{-\sqrt{r}}^{0} dy
-		= -3 \int\limits_{0}^{2 \pi} d \theta
+		\int\limits_{-\sqrt{r}}^{0} dy = \\
+    &= -3 \int\limits_{0}^{2 \pi} d \theta
 		\int\limits_{0}^{1}r^{\frac{3}{2}}~dr
 		= -3 \cdot 2\pi \cdot \frac{2}{3} = -4 \pi
-	\end{equation*}
-
+	\end{align*}
 
 	\begin{equation*}
 		\Phi = \Phi_{\text{вращения}} - \Phi_{\text{дна}} = -\frac{9}{2}\pi - (-6 \pi) = \frac{3}{2}\pi
 	\end{equation*}
-
 \end{frame}
